@@ -28,6 +28,12 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
+  const result = [];
+  arr.forEach(function(word){
+    result.push(word + '!')
+  });
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +46,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,7 +148,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array with an exclamation point added to each value of the original array', () => {
     expect(addExclamation(['hi', 'how', 'are', 'you'])).toStrictEqual(['hi!', 'how!', 'are!', 'you!']);
   });
