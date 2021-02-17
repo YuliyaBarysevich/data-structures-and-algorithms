@@ -185,6 +185,18 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
+  arr.sort(function(leftNumber, rightNumber){
+    leftNumber = leftNumber.toString().length
+    rightNumber = rightNumber.toString().length
+    if (leftNumber > rightNumber){
+      return 1;
+    } else if (leftNumber < rightNumber) {
+      return -1;
+    } else {
+      return 0;
+    }
+  })
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -354,7 +366,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort numbers by their length', () => {
     expect(sortNumbersByLength([10, 2.8, 1, -47.75])).toStrictEqual([1, 10, 2.8, -47.75]);
     expect(sortNumbersByLength([100, 2.82, 1, -47.75])).toStrictEqual([1, 100, 2.82, -47.75]);
