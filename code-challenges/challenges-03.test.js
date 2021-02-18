@@ -245,6 +245,31 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  arr.sort(function(leftPerson, rightPerson){
+    
+    if (leftPerson.lastName > rightPerson.lastName) {
+      return 1;
+    } else if (leftPerson.lastName < rightPerson.lastName){
+      return -1;
+    } else {
+      if (leftPerson.firstName > rightPerson.firstName) {
+        return 1;
+      } else if (leftPerson.firstName < rightPerson.firstName){
+        return -1;
+      }
+      else {
+        if (leftPerson.age > rightPerson.age) {
+          return 1;
+        } else if (leftPerson.age < rightPerson.age){
+          return -1;
+        } else {
+          return 0;
+        }
+      }
+    }
+  })
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -269,8 +294,22 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
+
+
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  const order = {"Monday": 1, "Tuesday": 2, "Wednesday": 3, "Thursday": 4,"Friday": 5}
+  
+  arr.sort(function(leftDay, rightDay){
+    if (order[leftDay.dayOfWeek] > order[rightDay.dayOfWeek]){
+      return 1;
+    } else if (order[leftDay.dayOfWeek] < order[rightDay.dayOfWeek]) {
+      return -1;
+    } else {
+      return 0;
+    }
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -398,7 +437,7 @@ describe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
@@ -419,7 +458,7 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
