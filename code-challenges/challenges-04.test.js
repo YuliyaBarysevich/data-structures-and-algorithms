@@ -69,8 +69,10 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-};
+  let regex = /[A-Z]\w+/gm;
+  return str.match(regex) || [];
 
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -79,6 +81,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let resultArr = [];
+  let regex = /^[A-D]\w/;
+
+  for (let i = 0; i < arr.length; i++){
+    if (regex.test(arr[i])) {
+      resultArr.push(arr[i])
+    }
+  }
+  return resultArr;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -197,7 +209,7 @@ describe('Testing challenge 4', () => {
   });
 })
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
