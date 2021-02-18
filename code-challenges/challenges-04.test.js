@@ -24,6 +24,8 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
+  let regex = /w+/;
+  return regex.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +42,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let regex = /\d/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,7 +157,7 @@ describe('Testing challenge 1', () => {
   })
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return true if the input contains a lower case w', () => {
     expect(containsW('hello world')).toBe(true);
   });
@@ -165,7 +169,7 @@ xdescribe('Testing challenge 2', () => {
   })
 })
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
