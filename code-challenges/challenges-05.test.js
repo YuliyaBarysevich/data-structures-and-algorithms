@@ -163,11 +163,12 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  for (let i =0; i < recipe.ingredients.length; i++){
+  for (let i =0; i < gruffaloCrumble.ingredients.length; i++){
     let regex = /^\d+\b\s\S+\s/gm
-    let resultStr = recipe.ingredients[i].replace(regex, '');
-    result.push(resultStr)
-  }
+    let resultStr = gruffaloCrumble.ingredients[i].split(regex);
+    resultStr.shift()
+    result.push(resultStr.toString())
+}
   return result;
 };
 
