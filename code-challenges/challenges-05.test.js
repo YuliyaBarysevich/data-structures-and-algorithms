@@ -144,9 +144,9 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  for (let i =0; i < gruffaloCrumble.ingredients.length; i++){
+  for (let i =0; i < recipe.ingredients.length; i++){
     let regex = /^\d+\b\s\S+\s/gm
-    let resultStr = gruffaloCrumble.ingredients[i].replace(regex, '');
+    let resultStr = recipe.ingredients[i].replace(regex, '');
     result.push(resultStr)
   }
   return result;
@@ -163,6 +163,11 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  for (let i =0; i < recipe.ingredients.length; i++){
+    let regex = /^\d+\b\s\S+\s/gm
+    let resultStr = recipe.ingredients[i].replace(regex, '');
+    result.push(resultStr)
+  }
   return result;
 };
 
@@ -313,7 +318,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
