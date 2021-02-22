@@ -154,6 +154,9 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  for (let i = 0; i < arr.length; i++){
+    houses.push(arr[i].house)
+  }
   return houses;
 };
 
@@ -209,6 +212,7 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
+  
   return sizes;
 };
 
@@ -282,7 +286,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return an array of the names of the houses', () => {
     expect(getHouses(characters)[0]).toStrictEqual('Greyjoy');
     expect(getHouses(characters).length).toStrictEqual(7);
