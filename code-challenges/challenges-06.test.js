@@ -134,6 +134,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  const resultArr = [];
+  const keyValues = Object.entries(obj);
+  keyValues.forEach(miniArr => {
+    var nameAndPhone = `${miniArr[0]}: ${miniArr[1]}`
+    resultArr.push(nameAndPhone)
+  })
+  return resultArr;
 };
 
 
@@ -263,7 +270,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return an an array of names and numbers', () => {
     const startingObj = {
       'Grace Hopper': '222-303-5938',
