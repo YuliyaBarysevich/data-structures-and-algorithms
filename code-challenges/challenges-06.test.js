@@ -104,6 +104,13 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
+  for (let key in obj){
+    if (obj[key] === value){
+      return true;
+    }else {
+      return false;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -246,7 +253,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true if the value is in the object', () => {
     expect(checkValues({ class: '301' }, '301')).toBe(true);
   });
