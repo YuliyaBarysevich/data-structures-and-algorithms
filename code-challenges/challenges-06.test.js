@@ -216,6 +216,18 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let total = [];
+
+  for (let i = 0; i < arr.length; i++){
+    total.push(arr[i].name);
+    if (arr[i].spouse){
+      total.push(arr[i].spouse)
+    }
+    for (let j = 0; j < arr[i].children.length; j++){
+      total.push(arr[i].children[j])
+    }
+  }
+  return total.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -333,7 +345,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the number of characters in the array', () => {
     expect(totalCharacters(characters)).toStrictEqual(26);
   });
