@@ -9,6 +9,7 @@ Use the characters data below for all of the challenges except challenge 2 and 3
 Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
 
 ------------------------------------------------------------------------------------------------ */
+
 let characters = [
   {
     name: 'Eddard',
@@ -278,6 +279,19 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 const houseSurvivors = (arr) => {
   const survivors = [];
   // Solution code here...
+  for (let i = 0; i < arr.length; i++){
+    let people = 1;
+    for (let j = 0; j < deceasedSpouses.length; j++){
+      if (arr[i].spouse !== deceasedSpouses[j] && arr[i].spouse === true){
+        people += 1;
+        break;
+      }
+    }
+    if(arr[i].children){
+      people += arr[i].children.length;
+    }
+    survivors.push({house: arr[i].house, members: people})
+  }
   return survivors;
 };
 
@@ -368,7 +382,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should not include any deceased spouses', () => {
     expect(houseSurvivors(characters)).toStrictEqual([{ house: 'Greyjoy', members: 1 }, { house: 'Snow', members: 1 }, { house: 'Arryn', members: 2 }, { house: 'Tyrell', members: 3 }, { house: 'Lannister', members: 4 }, { house: 'Targaryen', members: 4 }, { house: 'Stark', members: 6 }]);
   });
