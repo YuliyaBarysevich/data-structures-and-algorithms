@@ -64,6 +64,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  const result = [];
+  arr.forEach(function(number){
+    result.push(Math.pow(2, number))
+  })
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,6 +114,16 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  let resultArr = arr.map(function(num){
+    if (num % 2 === 0){
+      return 'even'
+    } else if (num % 2 === 1){
+      return 'odd'
+    } else {
+      return 'N/A'
+    }
+  })
+  return resultArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -244,7 +259,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forEachTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forEachTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -273,7 +288,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
