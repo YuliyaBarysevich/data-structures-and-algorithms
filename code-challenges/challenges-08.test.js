@@ -107,6 +107,14 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  const newArr = arr.filter(num =>{
+    if (!forbiddenValues.includes(num)){
+      return true;
+    } else {
+      return false;
+    }
+  })
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -287,7 +295,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   const firstNums = [1, 2, 3];
   const secondNums = [1, 2, 3, 4];
 
