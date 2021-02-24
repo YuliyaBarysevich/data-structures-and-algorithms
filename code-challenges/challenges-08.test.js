@@ -241,6 +241,14 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  const withoutChildren = arr.filter(obj => {
+    if (!obj.children){
+      return true;
+    } else {
+      return false;
+    } 
+  })
+  return withoutChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -369,7 +377,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an array containing characters who do not have children', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
