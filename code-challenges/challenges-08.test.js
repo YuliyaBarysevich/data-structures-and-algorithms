@@ -178,6 +178,16 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  const names = [];
+  arr.filter(object => {
+    if (object.baseStat > minBaseStat){
+      names.push(object.stat.name)
+      return true;
+    } else {
+      return false;
+    }
+  });
+  return names;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -338,7 +348,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
