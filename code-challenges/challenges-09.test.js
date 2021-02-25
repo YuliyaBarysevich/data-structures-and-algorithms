@@ -74,6 +74,12 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  const result = arr.reduce(arrLength, 0)
+  function arrLength (acc){
+    acc++;
+    return acc;
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -324,7 +330,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return the length of the array', () => {
     expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
   });
