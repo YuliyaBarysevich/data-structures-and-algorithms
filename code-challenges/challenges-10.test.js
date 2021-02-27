@@ -43,6 +43,12 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  const result = input.toString().split(",").filter(number => {
+    if (target == number){
+      return true;
+    }
+  })
+  return result.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -169,7 +175,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return the number of times the input is in the nested arrays', () => {
     expect(count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(4);
     expect(count(3, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(2);
