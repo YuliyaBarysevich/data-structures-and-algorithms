@@ -104,6 +104,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  let regex = /^(\(\d{3}?\)|\d{3})\s?\-?\d{3}(\-?|\s?)(\d{4})$/mg;
+  return regex.test(phoneNumber)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -207,7 +209,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should match the acceptable phone number formats', () => {
     expect(validatePhoneNumber('(555) 555-5555')).toBeTruthy();
     expect(validatePhoneNumber('555 555-5555')).toBeTruthy();
