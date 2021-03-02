@@ -110,6 +110,12 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  var resultArr =[]
+  hours.forEach((time, i) =>{
+    let resultObj = {sales: data[i] + ' cookies', time: time }
+    resultArr.push(resultObj)
+  })
+return resultArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -267,7 +273,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should create an object of data for each store', () => {
     expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
       { sales: '88 cookies', time: '9 a.m.' },
