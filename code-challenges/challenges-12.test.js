@@ -209,6 +209,15 @@ const weeklyTemperatures = [
 
 const averageDailyTemperature = (weather) => {
   // Solution code here...
+  let totalDays = 0;
+  let totalTemp = 0;
+  for (var i = 0; i < weather.length; i++) {
+    totalDays += weather[i].length
+    for(var j =0; j < weather[i].length; j++){
+      totalTemp += weather[i][j]
+    }
+  }
+  return totalTemp / totalDays;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -346,7 +355,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should calculate and return the average temperature of the data set', () => {
     expect(averageDailyTemperature(weeklyTemperatures)).toStrictEqual(60.25);
   });
