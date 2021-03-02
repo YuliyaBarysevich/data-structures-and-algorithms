@@ -141,6 +141,13 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let petTreats;
+  arr.forEach(storeName => {
+    if (storeName.store === 'Pet store'){
+      petTreats = storeName.items[1].quantity
+    }
+  })
+  return petTreats;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -294,7 +301,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the number 24', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
