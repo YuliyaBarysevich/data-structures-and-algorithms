@@ -10,6 +10,14 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
+  const result = arr.reduce(maximumValue, 0)
+  function maximumValue(acc, val){
+    if (val > acc){
+      acc = val
+    }
+    return acc;
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -287,7 +295,7 @@ Run your tests from the console: jest challenge-12.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return the maximum number found', () => {
     expect(maxInArray([4, 2, 7, 5, 9, 2])).toStrictEqual(9);
   });
