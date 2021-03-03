@@ -101,6 +101,10 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  let regex = /(:)+\)/gm
+  let smileFaceCheck = (string) => string.match(regex);
+
+ return arr.every(smileFaceCheck)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -240,7 +244,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should correctly assess whether all the strings are happy', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
