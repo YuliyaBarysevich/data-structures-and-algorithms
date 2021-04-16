@@ -32,6 +32,12 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  let result = []
+  arr.forEach(function(word){
+    let newWord = word.charAt(0).toUpperCase() + word.slice(1);
+    result.push(newWord)
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -184,7 +190,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should convert each word to title case', () => {
     const words = ['apple', 'banana', 'MacGyver'];
     expect(toTitleCase(words)).toStrictEqual(['Apple', 'Banana', 'MacGyver']);
