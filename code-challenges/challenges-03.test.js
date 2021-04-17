@@ -76,7 +76,7 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
-   function sortArr (leftNum, rightNum){
+  function sortArr (leftNum, rightNum){
     if (leftNum > rightNum){
       return 1;
     } else if ( leftNum < rightNum) {
