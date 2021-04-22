@@ -6,10 +6,27 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-co
 
 ### 301 Code Challenges
 
-Under the `data-structures-and-algorithms` repository, at the top level is a folder called `code-challenges`
+**Table of contents:**
 
-Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
+- Array.forEach()
+- Value vs. Reference
+- Array.sort()
+- Regex, Part 1
+- Split(), join(), slice(), splice()
+- Object.keys, Object.values, Object.entries
+- Array.map()
+- Array.filter()
+- Array.reduce()
+- Chaining methods
+- Regex, Part 2
+- Two-dimensional arrays
+- Includes, Every, Substring, charAt
+- Review / Combination of everything
+
 
 ### 401 Data Structures, Code Challenges
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+**Table of contents:**
+
+- Array Shift
+- Array Binary Search
