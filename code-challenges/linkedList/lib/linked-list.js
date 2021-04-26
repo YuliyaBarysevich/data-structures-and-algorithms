@@ -66,6 +66,37 @@ class LinkedList {
     }
     return resultArr.join(' -> ');
   }
+
+  insertBefore(value, newVal){
+    let node =this.head;
+    let newNode;
+
+    while(node !== null){
+      if(node.next.value === value){
+        newNode = new Node(newVal);
+        newNode.next = node.next;
+        node.next = newNode;
+        return this;
+      }
+      node = node.next;
+    }
+  }
+
+  insertAfter(value, newVal){
+    let node = this.head;
+    let newNode;
+
+    while(node !== null){
+      if(node.value === value){
+        newNode = new Node(newVal)
+        newNode.next = node.next;
+        node.next = newNode;
+        return this;
+      }
+      node = node.next;
+    }
+  }
+
 }
 
 
