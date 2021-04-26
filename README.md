@@ -30,3 +30,4 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-co
 
 - Array Shift
 - Array Binary Search
+- Linked List
