@@ -36,7 +36,7 @@ There are two types of Linked List - Singly and Doubly. We will be implementing 
 
 ### Feature Tasks
 
-1. `.append(value`) which adds a new node with the given `value` to the end of the list
+1. `.append(value)` which adds a new node with the given `value` to the end of the list
 
 2. `.insertBefore(value, newVal)` which add a new node with the given `newValue` immediately before the first `value` node
 
