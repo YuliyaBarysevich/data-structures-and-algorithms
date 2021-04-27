@@ -8,7 +8,7 @@ describe('Linked List', () => {
     expect(list.head).toEqual(null);
   });
 
-  it('should add a new node to the list', () => {
+  it('should add a node to the end of the linked list', () => {
     let list = new LL();
     let first = 1;
     let second = 2;
@@ -19,7 +19,21 @@ describe('Linked List', () => {
     expect(list.head.value).toEqual(1);
   });
 
-  it('should add a new node to the head of the list', () => {
+  it('should add multiple nodes to the end of a linked list', () => {
+    let list = new LL();
+    let first = 1;
+    let second = 2;
+    let third = 3;
+
+    list.append(first);
+    list.append(second);
+    list.append(third);
+    expect(list.head.value).toEqual(1);
+    expect(list.toString()).toEqual('{1} -> {2} -> {3} -> NULL')
+
+  });
+
+  it('should insert a node before the first node of a linked list', () => {
     let list = new LL();
     let first = 1;
     let second = 2;
@@ -44,6 +58,7 @@ describe('Linked List', () => {
     list.append(second);
     list.append(third);
 
+
     expect(list.includes(3)).toBe(true)
     expect(list.includes(2)).toBe(false)
 
@@ -64,6 +79,56 @@ describe('Linked List', () => {
 
   });
 
+  it('should insert a node before a node located in the middle of a linked list', () =>{
+    let list = new LL();
+
+    list.append(1);
+    list.append(3);
+    list.append(2);
+    list.insertBefore(3, 5)
+    expect(list.toString()).toEqual('{1} -> {5} -> {3} -> {2} -> NULL')
+
+    console.log(list.toString())
+  })
+
+
+
+  // it('insert a node after the last node of the linked list', () => {
+  //   let list = new LL();
+
+  //   list.append(1);
+  //   list.append(3);
+  //   list.append(2);
+  //   list.insertBefore(1, 5)
+
+  //   expect(list.toString()).toEqual('{5} -> {1} -> {3} -> {2} -> NULL')
+  //   console.log(list.toString())
+
+  // })
+
+  it('should insert after a node in the middle of the linked list', () =>{
+    let list = new LL();
+
+    list.append(1);
+    list.append(3);
+    list.append(2);
+    list.insertAfter(3, 5)
+    expect(list.toString()).toEqual('{1} -> {3} -> {5} -> {2} -> NULL')
+
+    console.log(list.toString())
+  })
+
+  it('should insert a node after the last node of the linked list', () =>{
+    let list = new LL();
+
+    list.append(1);
+    list.append(3);
+    list.append(2);
+    list.insertAfter(2, 5)
+    expect(list.toString()).toEqual('{1} -> {3} -> {2} -> {5} -> NULL')
+
+    console.log(list.toString())
+  })
 
 
 })

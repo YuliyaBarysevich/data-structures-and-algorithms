@@ -5,8 +5,10 @@ A Linked List is a sequence of Nodes that are connected/linked to each other. Th
 There are two types of Linked List - Singly and Doubly. We will be implementing a Singly Linked List in this implementation.
 
 
+## Challenge 05
 
-## Challenge
+
+### Feature Tasks
 
 1. Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 
@@ -19,7 +21,7 @@ There are two types of Linked List - Singly and Doubly. We will be implementing 
 5. Define a method called `toString` which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 `"{ a } -> { b } -> { c } -> NULL"`
 
-## Tests
+### Tests
 
 - Can successfully instantiate an empty linked list
 - Can properly insert into the linked list
@@ -29,3 +31,22 @@ There are two types of Linked List - Singly and Doubly. We will be implementing 
 - Will return false when searching for a value in the linked list that does not exist
 - Can properly return a collection of all the values that exist in the linked list
 
+
+## Challenge 06
+
+### Feature Tasks
+
+1. `.append(value)` which adds a new node with the given `value` to the end of the list
+
+2. `.insertBefore(value, newVal)` which add a new node with the given `newValue` immediately before the first `value` node
+
+3. `.insertAfter(value, newVal)` which add a new node with the given `newValue` immediately after the first `value` node
+
+### Tests
+
+- Can successfully add a node to the end of the linked list
+- Can successfully add multiple nodes to the end of a linked list
+- Can successfully insert a node before a node located i the middle of a linked list
+- Can successfully insert a node before the first node of a linked list
+- Can successfully insert after a node in the middle of the linked list
+- Can successfully insert a node after the last node of the linked list
