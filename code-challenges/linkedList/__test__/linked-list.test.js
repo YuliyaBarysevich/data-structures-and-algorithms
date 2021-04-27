@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const LL = require('../lib/linked-list')
+const LL = require('../lib/linked-list');
 
 describe('Linked List', () => {
   it('should create an empty List', () => {
@@ -29,7 +29,7 @@ describe('Linked List', () => {
     list.append(second);
     list.append(third);
     expect(list.head.value).toEqual(1);
-    expect(list.toString()).toEqual('{1} -> {2} -> {3} -> NULL')
+    expect(list.toString()).toEqual('{1} -> {2} -> {3} -> NULL');
 
   });
 
@@ -59,8 +59,8 @@ describe('Linked List', () => {
     list.append(third);
 
 
-    expect(list.includes(3)).toBe(true)
-    expect(list.includes(2)).toBe(false)
+    expect(list.includes(3)).toBe(true);
+    expect(list.includes(2)).toBe(false);
 
   });
 
@@ -74,7 +74,7 @@ describe('Linked List', () => {
     list.append(second);
     list.append(third);
 
-    expect(list.toString()).toEqual('{1} -> {2} -> {3} -> NULL')
+    expect(list.toString()).toEqual('{1} -> {2} -> {3} -> NULL');
     console.log(list.toString());
 
   });
@@ -85,11 +85,11 @@ describe('Linked List', () => {
     list.append(1);
     list.append(3);
     list.append(2);
-    list.insertBefore(3, 5)
-    expect(list.toString()).toEqual('{1} -> {5} -> {3} -> {2} -> NULL')
+    list.insertBefore(3, 5);
+    expect(list.toString()).toEqual('{1} -> {5} -> {3} -> {2} -> NULL');
 
-    console.log(list.toString())
-  })
+    console.log(list.toString());
+  });
 
 
 
@@ -112,11 +112,11 @@ describe('Linked List', () => {
     list.append(1);
     list.append(3);
     list.append(2);
-    list.insertAfter(3, 5)
-    expect(list.toString()).toEqual('{1} -> {3} -> {5} -> {2} -> NULL')
+    list.insertAfter(3, 5);
+    expect(list.toString()).toEqual('{1} -> {3} -> {5} -> {2} -> NULL');
 
-    console.log(list.toString())
-  })
+    console.log(list.toString());
+  });
 
   it('should insert a node after the last node of the linked list', () =>{
     let list = new LL();
@@ -124,11 +124,60 @@ describe('Linked List', () => {
     list.append(1);
     list.append(3);
     list.append(2);
-    list.insertAfter(2, 5)
-    expect(list.toString()).toEqual('{1} -> {3} -> {2} -> {5} -> NULL')
+    list.insertAfter(2, 5);
+    expect(list.toString()).toEqual('{1} -> {3} -> {2} -> {5} -> NULL');
 
-    console.log(list.toString())
-  })
+    console.log(list.toString());
+  });
+
+  it('should return FALSE if k is greater than the length of the linked list', () =>{
+    let list = new LL();
+    list.append(1);
+    list.append(3);
+    list.append(8);
+    list.append(2);
+
+    expect(list.kthFromEnd(8)).toBe(false);
+  });
+
+  it('should return FALSE if k and the length of the list are the same', () =>{
+    let list = new LL();
+    list.append(1);
+    list.append(3);
+    list.append(8);
+    list.append(2);
+
+    expect(list.kthFromEnd(4)).toBe(false);
+  });
+
+  it('should return FALSE if k is not a positive integer', () =>{
+    let list = new LL();
+    list.append(1);
+    list.append(3);
+    list.append(8);
+    list.append(2);
+    
+    expect(list.kthFromEnd(-2)).toBe(false);
+  });
+
+  it('should return FALSE if  the linked list is of a size 1', () =>{
+    let list = new LL();
+    list.append(1);
+    
+    expect(list.kthFromEnd(1)).toBe(false);
+  });
+
+  it('Happy Path should return the node’s value that is k from the end of the linked list', () =>{
+    let list = new LL();
+
+    list.append(1);
+    list.append(3);
+    list.append(8);
+    list.append(2);
+    
+    expect(list.kthFromEnd(2)).toEqual(3);
+  });
 
 
-})
+
+});
