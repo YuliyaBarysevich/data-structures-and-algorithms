@@ -97,6 +97,30 @@ class LinkedList {
     }
   }
 
+  kthFromEnd(k){
+    let node = this.head;
+    let length = 0;
+    let count = 0;
+
+    while(node){
+      length++;
+      node = node.next;
+    }
+    node = this.head;
+    if(k === length || k < 0 || k > length || length === 0){
+      return false;
+    }
+    while(node) {
+      if(count === length - k -1){
+        return node.value
+      }
+      count++;
+      node = node.next;
+
+    }
+
+  }
+
 }
 
 
