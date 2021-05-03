@@ -34,3 +34,4 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-co
 - Linked List Insertions 
 - K-th value from the end of a Linked List.
 - Zip two Linked Lists
+- Stacks and Queues
