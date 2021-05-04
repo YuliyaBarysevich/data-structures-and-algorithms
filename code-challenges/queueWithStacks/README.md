@@ -33,5 +33,3 @@ The insertion operation is called enqueue, and the removal operation is called d
 2. Can successfully enqueue multiple elements into a queue
 3. Can successfully dequeue out of a queue the expected value
 4. Should return FALSE if calling dequeue on empty queue
-5. 
-6. 
