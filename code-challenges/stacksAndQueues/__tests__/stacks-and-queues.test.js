@@ -97,6 +97,7 @@ describe('Queue', () => {
     queue.enqueue(5);
     queue.enqueue(8);
     queue.enqueue(9);
+    console.log(queue)
     expect(queue.front).toEqual(3);
   });
 
@@ -106,7 +107,7 @@ describe('Queue', () => {
     queue.enqueue(8);
     queue.enqueue(9);
     expect(queue.dequeue()).toEqual(5);
-    console.log(queue);
+    // console.log(queue);
     expect(queue.front).toEqual(2);
   });
 
@@ -118,7 +119,7 @@ describe('Queue', () => {
     queue.dequeue();
     queue.dequeue();
     queue.dequeue();
-    console.log(queue);
+    // console.log(queue);
     expect(queue.front).toEqual(0);
   });
 
