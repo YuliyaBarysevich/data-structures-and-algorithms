@@ -32,7 +32,8 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-co
 - Array Binary Search
 - Linked List
 - Linked List Insertions 
-- K-th value from the end of a Linked List.
+- K-th value from the end of a Linked List
 - Zip two Linked Lists
 - Stacks and Queues
 - Queue using two Stacks
+- First-in, First out Animal Shelter
