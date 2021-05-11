@@ -39,3 +39,4 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-co
 - First-in, First out Animal Shelter
 - Binary Tree / Binary Search Tree
 - Find maximum value in a Binary Tree
+- Breadth-first Traversal
