@@ -79,3 +79,23 @@ describe('Binary Tree', () => {
     expect(tree.postOrder()).toEqual([2, 4, 5, 3, 1]);
   });
 });
+
+describe('Find maximum value in a Binary Tree', () => {
+
+  let one = new Node(3);
+  let two = new Node(7);
+  let three = new Node(10);
+  let four = new Node(25);
+  let five = new Node(3);
+
+  one.left = two; 
+  one.right = three; 
+  three.left = four;
+  three.right = five; 
+  let tree = new BinaryTree(one);
+
+  it('should successfully return the maximum value stored in the tree', () => {
+    console.log(tree.findMaximumValue())
+    expect(tree.findMaximumValue()).toEqual(25);
+  });
+});
