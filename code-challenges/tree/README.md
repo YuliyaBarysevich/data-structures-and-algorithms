@@ -16,6 +16,7 @@ A binary tree has the benefits of both an ordered array and a linked list as sea
 3. Create a BinarySearchTree class
     - Define a method named `add` that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
     - Define a method named `contains` that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+4. Write an instance method called `findMaximumValue`. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
 ## Tests
 
@@ -25,3 +26,4 @@ A binary tree has the benefits of both an ordered array and a linked list as sea
 4. Can successfully return a collection from a preorder traversal
 5. Can successfully return a collection from an inorder traversal
 6. Can successfully return a collection from a postorder traversal
+7. Can successfully return the maximum value stored in the tree
