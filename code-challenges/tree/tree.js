@@ -138,6 +138,26 @@ class BinaryTree {
     }
     return maxNum;
   }
+
+  breadthFirst(){
+
+    // let currentNode = this.root;
+    let results = [];
+    let temp = [];
+    temp.push(this.root);
+
+    while(temp.length){
+      let node = temp.shift();
+      results.push(node.value);
+      if(node.left){
+        temp.push(node.left);
+      }
+      if(node.right){
+        temp.push(node.right);
+      }
+    }
+    return results;
+  }
 }
 
 module.exports = { BinarySearchTree, BinaryTree };
