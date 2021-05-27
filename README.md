@@ -43,3 +43,4 @@ See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-co
 - “FizzBuzz” on a k-ary tree
 - Insertion Sort
 - Merge Sort
+- Quick Sort
