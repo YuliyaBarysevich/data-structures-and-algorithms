@@ -12,15 +12,21 @@ class LL {
     this.head = null;
   }
 
-  add(val){
-    let node = new Node(val);
+  insert(value){
+    let node = new Node(value);
 
-    if(!this.head){
+    if(!this.head) {
       this.head = node;
-    } else{
-      node.next = this.head;
-      this.head = node;
+    } else {
+      let current = this.head; 
+      while(current.next) { 
+        current = current.next; 
+      }
+
+      current.next = node;
     }
+
+    return this;
   }
 
   getList() {
@@ -51,32 +57,39 @@ class Hashtable{
 
     if(!this.storage[hash]){
       let ll = new LL();
-      ll.add([key, val]);
+      ll.insert([key, val]);
       this.storage[hash] = ll;
     }else{
-      this.storage[hash].add([key, val]);
+      this.storage[hash].insert([key, val]);
     }
   }
 
   contains(key) {
     let hash = this.hash(key);
 
-    while(this.storage){
-      if(this.storage[hash].head.val[0] === key){
+    let currentItem = this.storage[hash].head
+
+    while(currentItem){
+      if(currentItem.val[0] === key){
         return true;
-      }else {
-        return false;
       }
+      currentItem = currentItem.next
     }
+    return false;
   }
 
   get(key){
     let hash = this.hash(key);
-    if(this.storage[hash].head.val[0] === key){
-      return this.storage[hash].head.val[1]
-    }else {
-      return null;
+
+    let currentItem = this.storage[hash].head
+
+    while(currentItem){
+      if(currentItem.val[0] === key){
+        return currentItem.val[1]
+      }
+      currentItem = currentItem.next
     }
+    return null;
   }
 }
 
