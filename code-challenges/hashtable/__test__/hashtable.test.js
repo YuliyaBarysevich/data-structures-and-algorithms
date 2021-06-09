@@ -10,11 +10,12 @@ describe('hashtable', () => {
   });
 
   it('adding a key/value to your hashtable results in the value being in the data structure', () => {
-    let hashtable = new Hashtable(3);
+    let hashtable = new Hashtable(2);
     hashtable.add('testKey1', 'testValue1');
     hashtable.add('testKey2', 'testValue2');
     hashtable.add('testKey3', 'testValue3');
-    expect(hashtable.storage[0].head.val).toEqual([ 'testKey2', 'testValue2' ])
+    console.log(hashtable.storage[0])
+    expect(hashtable.storage[0].head.val).toEqual([ 'testKey1', 'testValue1' ])
   });
 
   it('should Successfully hash a key to an in-range value', () => {
@@ -23,7 +24,7 @@ describe('hashtable', () => {
     hashtable.add('testKey2', 'testValue2');
     hashtable.add('testKey3', 'testValue3');
 
-    expect(hashtable.contains('testKey1')).toBe(true);
+    expect(hashtable.contains('testKey2')).toBe(true);
     expect(hashtable.contains('wrong')).toBe(false);
 
   });
